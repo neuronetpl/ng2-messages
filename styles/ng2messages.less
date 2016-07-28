@@ -1,0 +1,25 @@
+// out: ./ng2messages.css
+
+.ng2messages-container{
+  position:relative;
+  display:block;
+}
+.ng2messages-close{
+  display:block;
+  position:absolute;
+  right:10px;
+  top:10px;
+  cursor:pointer;
+  padding:10px;
+  border:1px solid;
+  border-radius: 2px;
+  opacity: 0.75;
+  line-height: 10px;
+  &:hover{
+    opacity:1;
+  }
+  &:after{
+    content:"X";
+    font-weight: bold;
+  }
+}
