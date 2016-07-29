@@ -4,7 +4,7 @@ import { MessagesService } from './ng2-messages.service';
 
 @Component({
   moduleId:module.id,
-  selector:'ng2messages',
+  selector:'ng2-messages',
   templateUrl:'templates/ng2messages.html',
   styleUrls:['./styles/ng2messages.css']
 })

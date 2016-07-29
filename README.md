@@ -19,7 +19,7 @@ import { MessagesService, MessagesComponent } from './your_path/ng2-messages/ng2
 
 In your main app template:
 ```html
-<ng2messages></ng2message>
+<ng2-messages></ng2-messages>
 
 <button (click)="msg.success('You are awesome!')">Click me fast!</button>
 ```

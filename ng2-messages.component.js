@@ -44,7 +44,7 @@ var MessagesComponent = (function () {
     MessagesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'ng2messages',
+            selector: 'ng2-messages',
             templateUrl: 'templates/ng2messages.html',
             styleUrls: ['./styles/ng2messages.css']
         }), 
