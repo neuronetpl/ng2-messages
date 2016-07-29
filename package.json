@@ -1,6 +1,6 @@
 {
   "name": "ng2-messages",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular 2 message module for displaying errors,infos,warnings,successes to user.",
   "main": "ng2messages.js",
   "scripts": {
