@@ -82,4 +82,4 @@ var MessagesService = (function () {
     return MessagesService;
 }());
 exports.MessagesService = MessagesService;
-//# sourceMappingURL=ng2messages.service.js.map
+//# sourceMappingURL=ng2-messages.service.js.map

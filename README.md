@@ -7,7 +7,7 @@ Angular2 messages component for displaying messages to user.
 In main app component:
 
 ```javascript
-import { MessagesService, MessagesComponent } from './your_path/ng2messages/ng2messages';
+import { MessagesService, MessagesComponent } from './your_path/ng2-messages/ng2-messages';
 
 @Component({
   ...
@@ -27,7 +27,7 @@ In your main app template:
 In some module that want to tell something to user:
 ```javascript
 ...
-import {MessagesService} from './your_path/ng2messages/ng2messages';
+import {MessagesService} from './your_path/ng2-messages/ng2-messages';
 
 @Component({
   ...

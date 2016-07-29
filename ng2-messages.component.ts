@@ -1,6 +1,6 @@
 import { Component,OnInit,OnDestroy } from '@angular/core';
 
-import { MessagesService } from './ng2messages.service';
+import { MessagesService } from './ng2-messages.service';
 
 @Component({
   moduleId:module.id,

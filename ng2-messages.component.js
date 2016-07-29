@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ng2messages_service_1 = require('./ng2messages.service');
+var ng2_messages_service_1 = require('./ng2-messages.service');
 var MessagesComponent = (function () {
     function MessagesComponent(msgs) {
         this.msgs = msgs;
@@ -48,9 +48,9 @@ var MessagesComponent = (function () {
             templateUrl: 'templates/ng2messages.html',
             styleUrls: ['./styles/ng2messages.css']
         }), 
-        __metadata('design:paramtypes', [ng2messages_service_1.MessagesService])
+        __metadata('design:paramtypes', [ng2_messages_service_1.MessagesService])
     ], MessagesComponent);
     return MessagesComponent;
 }());
 exports.MessagesComponent = MessagesComponent;
-//# sourceMappingURL=ng2messages.component.js.map
+//# sourceMappingURL=ng2-messages.component.js.map
