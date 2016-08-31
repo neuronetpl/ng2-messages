@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,11 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var Subject_1 = require('rxjs/Subject');
-var MessagesService = (function () {
-    function MessagesService() {
-        this.messagesSubject = new Subject_1.Subject();
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+export let MessagesService = class MessagesService {
+    constructor() {
+        this.messagesSubject = new Subject();
         this.messages = this.messagesSubject.asObservable();
         this._messages = {
             success: {},
@@ -22,10 +21,10 @@ var MessagesService = (function () {
         };
     }
     //if we just want to subscribe
-    MessagesService.prototype.subscribe = function (fn) {
+    subscribe(fn) {
         return this.messages.subscribe(fn);
-    };
-    MessagesService.prototype.guid = function () {
+    }
+    guid() {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
                 .toString(16)
@@ -33,53 +32,51 @@ var MessagesService = (function () {
         }
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
             s4() + '-' + s4() + s4() + s4();
-    };
-    MessagesService.prototype.add = function (type, msg) {
-        var guid = this.guid();
+    }
+    add(type, msg) {
+        let guid = this.guid();
         this._messages[type][guid] = msg;
         this.messagesSubject.next(this._messages);
         return guid;
-    };
-    MessagesService.prototype.remove = function (id) {
-        var info = Object.keys(this._messages.info);
-        if (info.includes(id)) {
+    }
+    remove(id) {
+        let info = Object.keys(this._messages.info);
+        if (info.indexOf(id) > -1) {
             delete this._messages.info[id];
             return this.messagesSubject.next(this._messages);
         }
-        var success = Object.keys(this._messages.success);
-        if (success.includes(id)) {
+        let success = Object.keys(this._messages.success);
+        if (success.indexOf(id) > -1) {
             delete this._messages.success[id];
             return this.messagesSubject.next(this._messages);
         }
-        var error = Object.keys(this._messages.error);
-        if (error.includes(id)) {
+        let error = Object.keys(this._messages.error);
+        if (error.indexOf(id) > -1) {
             delete this._messages.error[id];
             return this.messagesSubject.next(this._messages);
         }
-        var warning = Object.keys(this._messages.warning);
-        if (warning.includes(id)) {
+        let warning = Object.keys(this._messages.warning);
+        if (warning.indexOf(id) > -1) {
             delete this._messages.warning[id];
             return this.messagesSubject.next(this._messages);
         }
         console.error("message not found", id);
-    };
-    MessagesService.prototype.info = function (msg) {
+    }
+    info(msg) {
         return this.add('info', msg);
-    };
-    MessagesService.prototype.error = function (msg) {
+    }
+    error(msg) {
         return this.add('error', msg);
-    };
-    MessagesService.prototype.warning = function (msg) {
+    }
+    warning(msg) {
         return this.add('warning', msg);
-    };
-    MessagesService.prototype.success = function (msg) {
+    }
+    success(msg) {
         return this.add('success', msg);
-    };
-    MessagesService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], MessagesService);
-    return MessagesService;
-}());
-exports.MessagesService = MessagesService;
+    }
+};
+MessagesService = __decorate([
+    Injectable(), 
+    __metadata('design:paramtypes', [])
+], MessagesService);
 //# sourceMappingURL=ng2-messages.service.js.map
